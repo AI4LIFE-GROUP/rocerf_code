@@ -20,7 +20,7 @@ import pandas as pd
 import torch.nn as nn
 from torchvision import  datasets, transforms
 from torch.utils.data import DataLoader
-from model import LR_Model
+from models import LR_Model
 import ML_Models.data_loader as loader
 from torch.autograd.functional import hessian
 import numpy as np

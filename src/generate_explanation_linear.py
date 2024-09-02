@@ -38,7 +38,7 @@ parser.add_argument('-d', '--data_name')
 
 import torch
 
-def compute_fraction_above_threshold(model, input_tensor, threshold):
+def compute_validity(model, input_tensor, threshold):
     model.eval()
     with torch.no_grad():
         predictions = model(input_tensor)

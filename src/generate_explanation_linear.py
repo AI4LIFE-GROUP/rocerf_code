@@ -36,6 +36,18 @@ parser.add_argument('-f', '--file_number')
 parser.add_argument('-d', '--data_name')      
 
 
+import torch
+
+def compute_fraction_above_threshold(model, input_tensor, threshold):
+    model.eval()
+    with torch.no_grad():
+        predictions = model(input_tensor)
+        if predictions.dim() > 1:
+            predictions = predictions.max(dim=1).values
+        above_threshold = (predictions > threshold).float() 
+        validity = above_threshold.mean().item()
+    return validity
+
 def main(file_number, data_name):
 
     n_starting_instances = 5000

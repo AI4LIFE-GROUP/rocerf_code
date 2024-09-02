@@ -27,7 +27,7 @@ import pandas as pd
 import torch.nn as nn
 from torchvision import  datasets, transforms
 from torch.utils.data import DataLoader
-from model import LR_Model, NN3_ModelSP
+from models import LR_Model, NN3_ModelSP
 import ML_Models.data_loader as loader
 from captum.attr import LimeBase
 from torch import Tensor
